@@ -6,7 +6,7 @@ import {
    not, 
    toPairs,
    complement, 
-   splitEvery as R } from 'ramda';
+   splitEvery } from 'ramda';
 import validator from 'validator';
 
 const validate = (toValidate, validations) => 
@@ -17,20 +17,20 @@ const validate = (toValidate, validations) =>
                 ? { ...errors, [fieldName]: errorMessages  }
                 : errors;
         },
-        {}, R.toPairs(validations)
+        {}, toPairs(validations)
     );
 
 const errorMessagesFor = (toValidate, messagePairs) => 
-    R.map(
-        R.head, 
-        R.filter(([, validFn]) => 
-            R.not(validFn(toValidate)), 
-            R.splitEvery(2, messagePairs)
+    map(
+        head, 
+        filter(([, validFn]) => 
+            not(validFn(toValidate)), 
+            splitEvery(2, messagePairs)
         )
     );
 
-const isValid = R.isEmpty;
-const isNotValid = validator.notEmpty = R.complement(isValid);
+const isValid = isEmpty;
+const isNotValid = validator.notEmpty = complement(isValid);
 
 export default validate;
 export {
