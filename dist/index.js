@@ -20,7 +20,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var validate = function validate(toValidate, validations) {
-    return R.reduce(function (errors, _ref) {
+    return (0, _ramda.reduce)(function (errors, _ref) {
         var _ref2 = _slicedToArray(_ref, 2),
             fieldName = _ref2[0],
             validationGroup = _ref2[1];
