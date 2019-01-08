@@ -31,7 +31,7 @@ const validations = {
         "Invalid email address.", validator.isEmail
     ],
     password: [
-        "Be at least 8 characters or longer.", (x) => x.length > 8,
+        "Be at least 8 characters or longer.", (x) => x.length >= 8,
         "Include at least one number or symbol", isIncluded(/[0-9!@#$%¨&*_()+.]/),
         "Uppercase and lowercase letter are required.", isIncluded(/(?=[A-Z])(?=[a-z])/)
     ]
