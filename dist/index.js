@@ -20,7 +20,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var validate = function validate(toValidate, validations) {
-    return _ramda.splitEvery.reduce(function (errors, _ref) {
+    return R.reduce(function (errors, _ref) {
         var _ref2 = _slicedToArray(_ref, 2),
             fieldName = _ref2[0],
             validationGroup = _ref2[1];
@@ -28,20 +28,20 @@ var validate = function validate(toValidate, validations) {
         var errorMessages = errorMessagesFor(toValidate[fieldName], validationGroup);
 
         return _validator2.default.notEmpty(errorMessages) ? _extends({}, errors, _defineProperty({}, fieldName, errorMessages)) : errors;
-    }, {}, _ramda.splitEvery.toPairs(validations));
+    }, {}, (0, _ramda.toPairs)(validations));
 };
 
 var errorMessagesFor = function errorMessagesFor(toValidate, messagePairs) {
-    return _ramda.splitEvery.map(_ramda.splitEvery.head, _ramda.splitEvery.filter(function (_ref3) {
+    return map(_ramda.head, (0, _ramda.filter)(function (_ref3) {
         var _ref4 = _slicedToArray(_ref3, 2),
             validFn = _ref4[1];
 
-        return _ramda.splitEvery.not(validFn(toValidate));
-    }, _ramda.splitEvery.splitEvery(2, messagePairs)));
+        return (0, _ramda.not)(validFn(toValidate));
+    }, (0, _ramda.splitEvery)(2, messagePairs)));
 };
 
-var isValid = _ramda.splitEvery.isEmpty;
-var isNotValid = _validator2.default.notEmpty = _ramda.splitEvery.complement(isValid);
+var isValid = _ramda.isEmpty;
+var isNotValid = _validator2.default.notEmpty = (0, _ramda.complement)(isValid);
 
 exports.default = validate;
 exports.validator = _validator2.default;
