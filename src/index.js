@@ -9,9 +9,6 @@ import {
    splitEvery as R } from 'ramda';
 import validator from 'validator';
 
-
-
-
 const validate = (toValidate, validations) => 
     R.reduce((errors, [fieldName, validationGroup]) => {
         const errorMessages = errorMessagesFor(toValidate[fieldName], validationGroup);
