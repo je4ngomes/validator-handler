@@ -1,0 +1,32 @@
+{
+  "name": "validator-handler",
+  "version": "1.0.0",
+  "description": "Tiny library to validate and set custom error messages easily.",
+  "keywords": [
+    "validate",
+    "validation",
+    "validator"
+  ],
+  "homepage": "https://github.com/nightw0lff",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nightw0lff/validator-handler"
+  },
+  "license": "MIT",
+  "author": "Jean G. <cyraxtsung@gmail.com> (https://github.com/nightw0lff)",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel src -d dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ramda": "^0.26.1",
+    "validator": "^10.10.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.17.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
+}
