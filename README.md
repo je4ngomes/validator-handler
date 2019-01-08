@@ -1,4 +1,4 @@
-#validator-handler
+# validator-handler
 Tiny library to validate and set custom error messages easily.
 
 # Installation and usage
@@ -9,7 +9,7 @@ Install the package:
 npm i validator-handler
 ```
 
-#Example
+# Example
 
 ```javascript
 import validate, { validator, isNotValid, isValid } from 'validator-handler';

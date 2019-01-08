@@ -9,8 +9,6 @@ import {
    splitEvery as R } from 'ramda';
 import validator from 'validator';
 
-validator.notEmpty = R.complement(R.isEmpty);
-
 const validate = (toValidate, validations) => 
     R.reduce((errors, [fieldName, validationGroup]) => {
         const errorMessages = errorMessagesFor(toValidate[fieldName], validationGroup);
@@ -32,7 +30,7 @@ const errorMessagesFor = (toValidate, messagePairs) =>
     );
 
 const isValid = R.isEmpty;
-const isNotValid = R.complement(isValid);
+const isNotValid = validator.notEmpty = R.complement(isValid);
 
 export default validate;
 export {
