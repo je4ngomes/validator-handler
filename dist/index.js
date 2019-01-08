@@ -19,8 +19,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-_validator2.default.notEmpty = _ramda.splitEvery.complement(_ramda.splitEvery.isEmpty);
-
 var validate = function validate(toValidate, validations) {
     return _ramda.splitEvery.reduce(function (errors, _ref) {
         var _ref2 = _slicedToArray(_ref, 2),
@@ -43,7 +41,7 @@ var errorMessagesFor = function errorMessagesFor(toValidate, messagePairs) {
 };
 
 var isValid = _ramda.splitEvery.isEmpty;
-var isNotValid = _ramda.splitEvery.complement(isValid);
+var isNotValid = _validator2.default.notEmpty = _ramda.splitEvery.complement(isValid);
 
 exports.default = validate;
 exports.validator = _validator2.default;
