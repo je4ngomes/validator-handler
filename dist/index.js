@@ -32,7 +32,7 @@ var validate = function validate(toValidate, validations) {
 };
 
 var errorMessagesFor = function errorMessagesFor(toValidate, messagePairs) {
-    return map(_ramda.head, (0, _ramda.filter)(function (_ref3) {
+    return (0, _ramda.map)(_ramda.head, (0, _ramda.filter)(function (_ref3) {
         var _ref4 = _slicedToArray(_ref3, 2),
             validFn = _ref4[1];
 

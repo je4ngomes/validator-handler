@@ -1,6 +1,6 @@
 {
   "name": "validator-handler",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Tiny library to validate and set custom error messages easily.",
   "keywords": [
     "validate",

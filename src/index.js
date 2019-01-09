@@ -1,6 +1,7 @@
 import { 
    head, 
-   filter, 
+   filter,
+   map, 
    reduce, 
    isEmpty, 
    not, 
