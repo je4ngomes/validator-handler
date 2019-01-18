@@ -31,7 +31,7 @@ const errorMessagesFor = (toValidate, messagePairs) =>
     );
 
 const isValid = isEmpty;
-const isNotValid = validator.notEmpty = complement(isValid);
+const isNotValid = validator.notEmpty = complement(isEmpty);
 
 export default validate;
 export {
